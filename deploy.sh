@@ -7,7 +7,7 @@ npm run build
 
 cd dist
 
-echo 'westonharper.com' > A
+echo 'westonharper.com' > CNAME
 
 git init
 git add -A
