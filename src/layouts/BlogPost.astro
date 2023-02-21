@@ -9,7 +9,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <article class="prose mx-auto">
+  <article class="prose prose-sm md:prose-lg lg:prose-xl mx-auto prose-slate dark:prose-invert">
     {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
     <h1>{title}</h1>
     <FormattedDate date={pubDate} />
