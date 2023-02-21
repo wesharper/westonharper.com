@@ -9,18 +9,34 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout>
-  <main>
-    <section>
-      <ul>
+  <div class="flex flex-col gap-y-10">
+    <section
+      class="flex flex-col items-center gap-y-5 text-center text-slate-900 dark:text-slate-100"
+    >
+      <h1 class="text-4xl font-bold sm:text-6xl md:text-7xl">
+        Subjectively Objectionable
+      </h1>
+      <span class="text-md text-slate-600 dark:text-slate-400 sm:text-lg"
+        >Strong, loosely-held opinions about startups and work life.</span
+      >
+    </section>
+    <section class="text-slate-800 dark:text-slate-200">
+      <ul class="flex flex-col gap-y-4">
         {
           posts.map((post) => (
             <li>
               <FormattedDate date={post.data.pubDate} />
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              <a
+                href={`/blog/${post.slug}/`}
+                class="text-xl font-bold transition-colors ease-in hover:text-blue-400"
+              >
+                {post.data.title}
+              </a>
+              <p>{post.data.description}</p>
             </li>
           ))
         }
       </ul>
     </section>
-  </main>
+  </div>
 </BaseLayout>
