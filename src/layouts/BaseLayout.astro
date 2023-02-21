@@ -20,6 +20,8 @@ const { title, description } = Astro.props;
   </head>
   <body class="bg-slate-200 antialiased dark:bg-slate-900">
     <Header />
-    <slot />
+    <main class="py-10 px-20">
+      <slot />
+    </main>
   </body>
 </html>
