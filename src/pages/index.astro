@@ -21,16 +21,18 @@ const { title, description } = Astro.props;
   <body
     class="h-screen animate-bg-cycle bg-slate-200 bg-gradient-to-br from-fuchsia-500 via-blue-600 to-fuchsia-500 bg-[length:800%_800%] antialiased dark:bg-slate-900"
   >
-    <Header />
+    <Header headerClass="!bg-opacity-0" />
     <main class="py-10 px-20">
-      <section class="prose prose-invert mx-auto max-w-5xl text-slate-100">
-        <p class="text-4xl font-bold sm:text-6xl md:text-7xl">
+      <section
+        class="prose prose-invert mx-auto max-w-6xl text-slate-50 2xl:max-w-7xl"
+      >
+        <p class="text-4xl font-bold sm:text-6xl md:text-7xl 2xl:text-8xl">
           Hi, my name is Wes, I'm a software engineer, entrepreneur, and startup
           consultant. If you want to read my thoughts about startups, work,
           tech, and other things I have no business weighing in on, head over to
           my <a href="/blog">blog</a>.
         </p>
-        <p class="text-sm sm:text-lg">
+        <p class="text-sm sm:text-lg md:text-2xl 2xl:text-3xl">
           Also, if you think I'd be a good fit for your team, <a href="/hire-me"
             >hire me</a
           >!
