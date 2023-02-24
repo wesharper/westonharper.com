@@ -1,14 +1,41 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title, description } = Astro.props;
 ---
 
-<BaseLayout>
-  <section class="prose prose-slate dark:prose-invert">
-    <span
-      >Hi, my name is Wes, I'm a software engineer, entrepreneur, and startup
-      consultant. I like to write about startups and work life on my <a
-        href="/blog">blog</a
-      >. Thanks for stopping by!</span
-    >
-  </section>
-</BaseLayout>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={title ?? SITE_TITLE}
+      description={description ?? SITE_DESCRIPTION}
+    />
+  </head>
+  <body
+    class="h-screen animate-bg-cycle bg-slate-200 bg-gradient-to-br from-fuchsia-500 via-blue-600 to-fuchsia-500 bg-[length:800%_800%] antialiased dark:bg-slate-900"
+  >
+    <Header />
+    <main class="py-10 px-20">
+      <section class="prose prose-invert mx-auto max-w-5xl text-slate-100">
+        <p class="text-4xl font-bold sm:text-6xl md:text-7xl">
+          Hi, my name is Wes, I'm a software engineer, entrepreneur, and startup
+          consultant. If you want to read my thoughts about startups, work,
+          tech, and other things I have no business weighing in on, head over to
+          my <a href="/blog">blog</a>.
+        </p>
+        <p class="text-sm sm:text-lg">
+          Also, if you think I'd be a good fit for your team, <a href="/hire-me"
+            >hire me</a
+          >!
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
