@@ -4,13 +4,13 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        "bg-cycle": {
+        "bg-cycle-br": {
           "0%, 100%": { "background-position": "left top" },
           "50%": { "background-position": "right bottom" },
         },
       },
       animation: {
-        "bg-cycle": "bg-cycle 15s ease-in-out infinite",
+        "bg-cycle-br": "bg-cycle-br 15s ease-in-out infinite",
       },
     },
   },

@@ -26,10 +26,7 @@ const posts = (await getCollection("blog")).sort(
           posts.map((post) => (
             <li>
               <FormattedDate date={post.data.pubDate} />
-              <a
-                href={`/blog/${post.slug}/`}
-                class="text-xl font-bold transition-colors ease-in hover:text-blue-400"
-              >
+              <a href={`/blog/${post.slug}/`} class="text-xl font-bold">
                 {post.data.title}
               </a>
               <p>{post.data.description}</p>
