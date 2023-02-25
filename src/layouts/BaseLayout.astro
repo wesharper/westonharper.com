@@ -1,0 +1,27 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en" class="dark">
+  <head>
+    <BaseHead
+      title={title ?? SITE_TITLE}
+      description={description ?? SITE_DESCRIPTION}
+    />
+  </head>
+  <body class="h-screen antialiased dark:bg-slate-900">
+    <Header />
+    <main class="mx-auto max-w-6xl py-10 px-20">
+      <slot />
+    </main>
+  </body>
+</html>
