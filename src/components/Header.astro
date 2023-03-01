@@ -6,6 +6,7 @@ export interface Props {
   headerClass?: string;
 }
 
+const { pathname } = Astro.url;
 const { headerClass } = Astro.props;
 ---
 
@@ -18,7 +19,11 @@ const { headerClass } = Astro.props;
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
   </nav>
-  <div class="flex items-baseline gap-x-5">
-    <ThemeToggleButton />
-  </div>
+  {
+    pathname !== "/" && (
+      <div class="flex items-baseline gap-x-5">
+        <ThemeToggleButton />
+      </div>
+    )
+  }
 </header>
