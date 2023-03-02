@@ -1,29 +1,16 @@
 ---
 import ThemeToggleButton from "./ThemeToggleButton.astro";
 import HeaderLink from "./HeaderLink.astro";
-
-export interface Props {
-  headerClass?: string;
-}
-
-const { pathname } = Astro.url;
-const { headerClass } = Astro.props;
 ---
 
 <header
-  class={`top-0 left-0 right-0 flex items-center justify-end gap-x-5 px-7 md:px-10 py-6 ${
-    headerClass ?? ""
-  }`}
+  class="top-0 left-0 right-0 flex items-center justify-end gap-x-5 px-7 py-6 md:px-10"
 >
   <nav class="flex gap-x-5 text-slate-800 dark:text-slate-100">
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
   </nav>
-  {
-    pathname !== "/" && (
-      <div class="flex items-baseline gap-x-5">
-        <ThemeToggleButton />
-      </div>
-    )
-  }
+  <div class="flex items-baseline gap-x-5">
+    <ThemeToggleButton />
+  </div>
 </header>
