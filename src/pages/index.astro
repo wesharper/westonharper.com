@@ -1,6 +1,7 @@
 ---
 import type { PageMetadata } from "@/consts";
 import HeadDefault from "@components/head-default.astro";
+import Header from "@components/header.astro";
 
 type Props = PageMetadata;
 ---
@@ -11,6 +12,7 @@ type Props = PageMetadata;
   </head>
 
   <body class="h-dvh bg-amber-300 dark:bg-violet-700">
+    <Header />
     <main class="relative mx-auto size-full p-16 sm:p-28 md:p-32">
       <div
         class="animate-pulse-slow absolute inset-10 -z-50 flex bg-gradient-to-tr from-rose-400 via-amber-400 to-rose-400 sm:inset-20 md:inset-24 dark:from-fuchsia-600 dark:via-violet-600 dark:to-fuchsia-600"
