@@ -1,3 +1,3 @@
-# westonharper.com
+# Weston Harper's Personal Website
 
-My personal website built with Astro and TailwindCSS.
+Built with Astro, Tailwind 4, Typescript, and MDX.

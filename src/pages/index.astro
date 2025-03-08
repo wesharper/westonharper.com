@@ -1,43 +1,10 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
-type Props = {
-  title?: string;
-  description?: string;
-};
-
-const { title, description } = Astro.props;
+import RootLayout from "@layouts/root.astro";
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead
-      title={title ?? SITE_TITLE}
-      description={description ?? SITE_DESCRIPTION}
-    />
-  </head>
-  <body
-    class="min-w-screen mx-auto h-full min-h-screen w-full animate-bg-cycle-br bg-gradient-to-br from-amber-400 via-rose-400 to-amber-400 bg-[length:250%_250%] antialiased dark:from-fuchsia-600 dark:via-violet-600 dark:to-fuchsia-600"
-  >
-    <Header />
-    <main class="p-7 md:py-10 md:px-20">
-      <section
-        class="prose prose-slate mx-auto max-w-6xl text-slate-800 dark:prose-invert dark:text-slate-50 2xl:max-w-7xl"
-      >
-        <p class="text-2xl font-bold sm:text-4xl md:text-5xl 2xl:text-6xl">
-          Hi, my name is Wes. I'm a software engineer, entrepreneur, and startup
-          consultant. If you want to read my thoughts about startups, work,
-          tech, and other things I have no business weighing in on, head over to
-          my <a href="/blog">blog</a>.
-        </p>
-        <p class="text-sm sm:text-lg md:text-2xl 2xl:text-3xl">
-          Think I'd be a good fit for your team? <a
-            href="mailto:hello@westonharper.com?subject=Work Inquiry">Hire me</a
-          >!
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+<RootLayout
+  title="Weston Harper"
+  description="Weston Harper's personal website"
+>
+  <h1>Hi</h1>
+</RootLayout>
