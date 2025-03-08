@@ -1,0 +1,16 @@
+---
+import type { PageMetadata } from "@/consts";
+import HeadDefault from "@components/head-default.astro";
+
+type Props = PageMetadata;
+---
+
+<html lang="en">
+  <head>
+    <HeadDefault {...Astro.props} />
+  </head>
+
+  <body class="h-dvh bg-slate-100 dark:bg-slate-900">
+    <slot />
+  </body>
+</html>
