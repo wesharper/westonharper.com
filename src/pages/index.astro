@@ -10,22 +10,22 @@ type Props = PageMetadata;
     <HeadDefault {...Astro.props} />
   </head>
 
-  <body class="h-dvh dark:bg-violet-700 bg-amber-300">
-    <main class="p-16 sm:p-28 md:p-32 size-full mx-auto relative">
+  <body class="h-dvh bg-amber-300 dark:bg-violet-700">
+    <main class="relative mx-auto size-full p-16 sm:p-28 md:p-32">
       <div
-        class="absolute animate-pulse-slow flex inset-10 -z-50 sm:inset-20 md:inset-24 bg-gradient-to-tr from-rose-400 via-amber-400 to-rose-400 dark:from-fuchsia-600 dark:via-violet-600 dark:to-fuchsia-600"
+        class="animate-pulse-slow absolute inset-10 -z-50 flex bg-gradient-to-tr from-rose-400 via-amber-400 to-rose-400 sm:inset-20 md:inset-24 dark:from-fuchsia-600 dark:via-violet-600 dark:to-fuchsia-600"
       >
       </div>
-      <div class="flex flex-col justify-between size-full">
+      <div class="flex size-full flex-col justify-between">
         <h1
-          class="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-relaxed max-w-6xl"
+          class="max-w-6xl text-2xl leading-relaxed font-extrabold sm:text-3xl md:text-4xl lg:text-5xl"
         >
           Hi, I'm Wes. I'm a software engineer, serial idea-haver, and
           infrequent blogger.
         </h1>
         <a
           href="mailto:hello@westonharper.com"
-          class="underline sm:text-lg md:text-xl hover:opacity-50 dark:hover:opacity-70 transition ease-out duration-300 w-fit"
+          class="w-fit underline transition duration-300 ease-out hover:opacity-50 sm:text-lg md:text-xl dark:hover:opacity-70"
           >Slide into my DMs</a
         >
       </div>
