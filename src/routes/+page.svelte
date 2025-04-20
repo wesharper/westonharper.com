@@ -21,7 +21,7 @@
 
 <style>
   :global(body) {
-    background-color: var(--color-amber-300);
+    background-color: var(--color-amber-400);
   }
   :global(.dark > body) {
     background-color: var(--color-violet-600);
