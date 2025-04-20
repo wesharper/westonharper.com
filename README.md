@@ -1,3 +1,3 @@
-# westonharper.com
+# [https://westonharper.com](westonharper.com)
 
-My personal website built with Astro and TailwindCSS.
+My personal blog site, built with SvelteKit.
