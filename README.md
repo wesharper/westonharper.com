@@ -1,3 +1,3 @@
-# [https://westonharper.com](westonharper.com)
+# [westonharper.com](https://westonharper.com)
 
 My personal blog site, built with SvelteKit.
