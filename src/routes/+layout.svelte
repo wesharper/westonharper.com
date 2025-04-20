@@ -6,9 +6,4 @@
 </script>
 
 <ModeWatcher />
-
-<div class="h-dvh">
-  <div class="size-full">
-    {@render children()}
-  </div>
-</div>
+{@render children()}

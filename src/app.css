@@ -47,6 +47,10 @@
     --input: var(--background);
     --ring: var(--foreground);
   }
+
+  body {
+    height: 100dvh;
+  }
 }
 
 @theme {
