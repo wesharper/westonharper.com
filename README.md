@@ -1,3 +1,3 @@
-# Weston Harper's Personal Website
+# [https://westonharper.com](westonharper.com)
 
-Built with Astro, Tailwind 4, Typescript, and MDX.
+My personal blog site, built with SvelteKit.
