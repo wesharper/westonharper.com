@@ -1,7 +1,9 @@
 <script lang="ts">
+  import { classList } from "$lib/actions";
   import { Button } from "$ui/button";
-  import "../_home.css";
 </script>
+
+<svelte:body use:classList={"bg-amber-400 dark:bg-violet-600"} />
 
 <div class="size-full pb-14 @md/layout:px-4 @xl/layout:px-10">
   <main
