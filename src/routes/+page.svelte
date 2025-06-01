@@ -12,16 +12,17 @@
     <h1
       class="max-w-6xl text-2xl leading-relaxed font-extrabold sm:text-3xl md:text-4xl lg:text-5xl"
     >
-      Hi, I'm Wes. I'm a software engineer, <Button
-        variant="link"
-        size="link"
-        href="/blog">infrequent blogger</Button
-      >, and serial idea-haver.
+      Hi, I'm Wes. <Button variant="link" href="/about"
+        >I'm a software engineer</Button
+      >, <Button variant="link" size="link" href="/blog"
+        >infrequent blogger</Button
+      >, and serial <Button variant="link" href="/work"
+        >side-project schemer</Button
+      >.
     </h1>
     <Button
       href="mailto:hello@westonharper.com"
       variant="link"
-      size="link"
       class="sm:text-lg md:text-xl">Slide into my DMs</Button
     >
   </main>
