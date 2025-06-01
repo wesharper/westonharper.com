@@ -4,6 +4,7 @@
   import { Sun, Moon } from "@lucide/svelte";
   import "../app.css";
   import { ModeWatcher, toggleMode } from "mode-watcher";
+  import { Button } from "$ui/button";
 
   let { children } = $props();
 </script>
@@ -14,21 +15,26 @@
   <Header
     class="bg-background/30 fixed top-4 right-4 left-4 mx-auto flex h-10 items-center justify-between rounded-lg px-3 py-2"
   >
-    <a
-      class="hover:text-foreground/60 rounded-md p-1 transition-colors duration-100 ease-linear"
-      href="/"
+    <Button size="icon" variant="ghost" href="/">
+      <WhLogo class="!size-7" />
+      <span class="sr-only">Home</span>
+    </Button>
+
+    <div
+      class="flex items-center justify-center gap-3 text-sm sm:text-base lg:text-lg"
     >
-      <WhLogo />
-      <span class="sr-only">Go to home page</span>
-    </a>
-    <button
-      onclick={toggleMode}
-      class="hover:text-foreground/60 cursor-pointer rounded-md p-1 transition-colors duration-100 ease-linear"
-    >
-      <Sun class="hidden size-6 dark:block" />
-      <Moon class="size-6 dark:hidden" />
+      <Button variant="link" size="link" href="/about">about</Button>
+
+      <Button variant="link" size="link" href="/blog">blog</Button>
+
+      <Button variant="link" size="link" href="/work">work</Button>
+    </div>
+
+    <Button onclick={toggleMode} variant="ghost" size="icon">
+      <Sun class="hidden !size-6 dark:block" />
+      <Moon class="!size-6 dark:hidden" />
       <span class="sr-only">Toggle theme</span>
-    </button>
+    </Button>
   </Header>
   {@render children()}
 </div>
