@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Button } from "$ui/button";
+  import "../_home.css";
 </script>
 
 <div class="size-full pb-14 @md/layout:px-4 @xl/layout:px-10">
@@ -27,12 +28,3 @@
     >
   </main>
 </div>
-
-<style>
-  :global(body) {
-    background-color: var(--color-amber-400);
-  }
-  :global(.dark > body) {
-    background-color: var(--color-violet-600);
-  }
-</style>

@@ -1,0 +1,6 @@
+body {
+  background-color: var(--color-amber-400);
+}
+.dark > body {
+  background-color: var(--color-violet-600);
+}
