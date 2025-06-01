@@ -7,7 +7,7 @@
   import { type VariantProps, tv } from "tailwind-variants";
 
   export const buttonVariants = tv({
-    base: "ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center gap-2 rounded-md whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+    base: "ring-offset-background focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center gap-2 rounded-md whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
     variants: {
       variant: {
         default:
@@ -19,7 +19,7 @@
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 text-sm font-medium",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground text-sm font-medium",
+          "text-foreground hover:text-foreground/60 !bg-transparent text-sm font-medium",
         link: "hover:decoration-primary hover:text-primary underline decoration-transparent transition-colors duration-300 ease-out",
       },
       size: {
@@ -52,13 +52,15 @@
   let {
     class: className,
     variant = "default",
-    size = "default",
+    size: _size = "default",
     ref = $bindable(null),
     href = undefined,
     type = "button",
     children,
     ...restProps
   }: ButtonProps = $props();
+
+  const size = $derived(variant === "link" ? "link" : _size);
 </script>
 
 {#if href}
