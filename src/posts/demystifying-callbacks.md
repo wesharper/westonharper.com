@@ -1,6 +1,6 @@
 ---
 title: Demystifying Callbacks
-description: A full, top-to-bottom breakdown of callbacks in JavaScript with examples.
+description: A full, top-to-bottom breakdown of callbacks with examples.
 date: "2025-08-22"
 tags:
   - JavaScript
@@ -8,9 +8,9 @@ tags:
 published: false
 ---
 
-As a software engineer and former bootcamp instructor who's taught and mentored hundreds of people, there is perhaps no single concept I've seen JavaScript programmers struggle with more than callbacks. The bad news is that the use of callbacks in JavaScript libraries and snippets is so ubiquitous, that having a solid grasp of them is essentially a hard requirement for anyone using JavaScript in almost any context. The good news is that the underlying concepts aren't very hard to understand once you break them all down into their constituent parts.
+As a software engineer and former bootcamp instructor who's taught and mentored hundreds of people, there is perhaps no single concept I've seen JavaScript programmers struggle with more than callbacks. To this day, I still find myself having discussions with students and even professional programmers about the underlying concepts and syntax behind callbacks. Hopefully, this document will serve as a permanent placeholder that I can point people to the next time the topic comes up.
 
-## Functions
+## Prerequisites
 
 ### Declaring Functions
 
@@ -144,7 +144,7 @@ As we can see, what we're really remembering and passing around when we use `obj
 
 ### References, References, References
 
-Armed with some knowledge about objects in JavaScript, let's get back to our anonymous function.
+Armed with some knowledge about objects and references in JavaScript, let's get back to our anonymous function.
 
 ```JavaScript
 // remember, functions are objects in JavaScript
@@ -166,8 +166,32 @@ bar();
 
 It can be helpful to think about functions just like we'd think about arrays or objects. Remember, they're just a way to store a block of code.
 
-Variables however, aren't the only way to create references. Let's look at another program:
+Variables however, aren't the only way to create references. Remember our original function definition? If a function definition allows us to define an argument name by which an arbitrary input is referred to within the context of our function, shouldn't all the same rules apply?
 
-## But Why Callbacks?
+Let's look at another program:
 
-As a library author, asking a consumer of your library to define a callback function can be an effective way to offer a broader set of features to library consumers without having to care about the specific details of their program.
+```JavaScript
+function printArrayItems(arr) {
+  for(const val of arr) {
+    console.log(val);
+  }
+}
+
+const foo = ['a', 'b', 'c'];
+const bar = foo;
+printArrayItems(foo);
+
+foo.push('d');
+printArrayItems(bar);
+printArrayItems([1, 2, 3]);
+```
+
+We know by now that when we pass around an array, we're really just passing around a _reference_ to that array. So in all 3 invocations of `printArrayItems`, we're passing a _reference_ to an array.
+
+Now notice the very last invocation. In this case, we're just passing an array directly to the function without first storing it somewhere. In this way, it's a lot like an anonymous array. We can't do anything with it after we print it because we don't have any way to refer to it anymore. But our function will still refer to it as `arr` while its code block runs.
+
+## And Now... Callbacks
+
+We finally have all of the prerequisite knowledge necessary to understand what's happening with callbacks, but even with all the knowledge we have, the syntax can still feel really unintuitive for some people and that's okay. As long as you strive to understand the code you're reading and writing, eventually it will feel like second nature.
+
+Let's look at a few more programs:
