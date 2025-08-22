@@ -14,37 +14,79 @@ As a software engineer and former bootcamp instructor who's taught and mentored 
 
 ### Declaring Functions
 
-I've found that the most important thing to start with when trying to understand callbacks is the semantics around JavaScript function definitions. Let's take a look at some common, semantically similar, syntactically distinct ways we might define a function in JavaScript.
+Because callbacks are just functions, let's start with a simple program that defines a function and invokes it.
+
+```JavaScript
+function add(a, b) {
+  return a + b;
+}
+
+const sum = add(1, 2);
+console.log(sum);
+```
+
+In this program, we have a function called `add` that accepts 2 arguments called `a` and `b`. Simple enough, but it's _really important_ before we move forward to understand that this function is essentially just a way to remember a block of code that we want to run again and again with a variety of different inputs.
+
+Let's get wild and change some things:
+
+```JavaScript
+function add(pizza, cheese) {
+  return pizza + cheese;
+}
+
+const sum = add(1, 2);
+console.log(sum);
+```
+
+This version of our program is functionally identical to the first, but it's intended to illustrate what the function definition syntax is actually doing by drawing our attention to the _argument definition_. Our `add` function definition essentially states that no matter what 2 values are passed as arguments to our `add` function, the first one will always be called `pizza` and the second argument will always be called `cheese` in the context of our code block. This makes the function incredibly flexible, because it can accept any two numbers and always just return the sum of the first value (`pizza`) and the second value (`cheese`).
+
+```JavaScript
+// store the value returned by the add function in variable foo
+const foo = add(1, 2);
+// print what's stored in foo
+console.log(foo);
+
+// store the value returned by the add function in variable bar
+const bar = add(3, 4);
+// print what's stored in bar
+console.log(bar);
+
+// store the value returned by the add function in variable baz
+const baz = add(foo, bar);
+// print what's stored in baz
+console.log(baz);
+```
+
+Now, let's take a look at some common, semantically similar, but syntactically distinct ways we might define a function in JavaScript.
 
 ```JavaScript
 // Named function using function syntax
-function hello() {
-  console.log('Hello world!');
+function add(a, b) {
+  return a + b;
 }
-hello();
+add(1, 2);
 
 // Anonymous function using function syntax
-const hello2 = function() {
-  console.log('Hello world!');
+const add2 = function(pizza, cheese) {
+  return pizza + cheese;
 }
-hello2();
+add2(3, 4);
 
 // Anonymous function using "fat arrow" syntax
-const hello3 = () => {
-  console.log('Hello world!');
+const add3 = (foo, bar) => {
+  return foo + bar;
 }
-hello3();
-
+add3(5, 6);
 ```
 
-Note that the second two examples are `anonymous functions`, sometimes called `lambda functions`. But what makes them "anonymous"? Consider the following program:
+Note that the second two examples are `anonymous functions` (sometimes called `lambda functions`). But what makes them "anonymous"? Consider the following program:
 
 ```JavaScript
 () => {
   console.log('Hello world!')
 }
 
-// but wait... how do we run this function?
+// how do we run this function?
 ```
 
 While this is a valid program, the function we've defined can't be _referenced_ because it doesn't have a name - it's anonymous. In other words, there's no way for us to _invoke_ this particular anonymous function. If we want to be able to run the code block defined by this function, we're going to need a reference to it. But what's a reference?
@@ -102,7 +144,7 @@ As we can see, what we're really remembering and passing around when we use `obj
 
 ### References, References, References
 
-Knowing what we know now about objects in JavaScript, let's rewrite our program so that we have a `reference` to our anonymous function.
+Armed with some knowledge about objects in JavaScript, let's get back to our anonymous function.
 
 ```JavaScript
 // remember, functions are objects in JavaScript
@@ -122,41 +164,9 @@ const bar = foo;
 bar();
 ```
 
-It can be helpful to think about functions just like we'd think about arrays or objects. They're just objects that store values, but instead of representing structured data, they store a block of code.
+It can be helpful to think about functions just like we'd think about arrays or objects. Remember, they're just a way to store a block of code.
 
 Variables however, aren't the only way to create references. Let's look at another program:
-
-```JavaScript
-function printArrayValues(arr) {
-  for(const val of arr) {
-    console.log(val);
-  }
-}
-
-const foo = [1, 2, 3];
-printArrayValues(foo);
-
-printArrayValues([4, 5, 6])
-```
-
-This program has a lot of subtle things going on that I've seen people gloss over when they're learning JavaScript (or programming in general). For instance, we have a function called `printArrayValues` that accepts an argument called `arr`. Simple enough, but it's _really important_ to understand that this function is like a variable for a block of code that _we control_. For instance, we could just as easily have called our argument `a` or `array` or `pizza`. If this seems obvious to you, then bear with me for a second. If not, you're not alone - I've seen dozens of programmers take the syntax of a program like this at face value without fully understanding what's happening.
-
-Let's get wild and change the argument name to `pizza` (I promise this will become relevant very soon):
-
-```JavaScript
-function printArrayValues(pizza) {
-  for(const val of pizza) {
-    console.log(val);
-  }
-}
-
-const foo = [1, 2, 3];
-printArrayValues(foo);
-
-printArrayValues([4, 5, 6])
-```
-
-This new program is functionally identical to the first example, but it might be surprising to read. In both examples, _we_ defined a function called `printArrayValues` and _we_ determined that our function accepts one argument, and _we_ defined what that argument is called. There's nothing special about the name `arr` except that it gives ourselves and other readers of our code a hint as to what we expect the _caller_ to pass in to our function.
 
 ## But Why Callbacks?
 
