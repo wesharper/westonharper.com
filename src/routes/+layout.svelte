@@ -23,11 +23,9 @@
     <div
       class="flex items-center justify-center gap-3 text-sm sm:text-base lg:text-lg"
     >
-      <Button variant="link" size="link" href="/about">about</Button>
-
+      <!-- <Button variant="link" size="link" href="/about">about</Button> -->
       <Button variant="link" size="link" href="/blog">blog</Button>
-
-      <Button variant="link" size="link" href="/work">work</Button>
+      <!-- <Button variant="link" size="link" href="/work">work</Button> -->
     </div>
 
     <Button onclick={toggleMode} variant="ghost" size="icon">
