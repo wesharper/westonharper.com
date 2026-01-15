@@ -18,7 +18,7 @@
     "@eslint/js": "^9.18.0",
     "@lucide/svelte": "^0.501.0",
     "@sveltejs/adapter-cloudflare": "^7.2.2",
-    "@sveltejs/kit": "^2.36.1",
+    "@sveltejs/kit": "^2.49.5",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.0.0",
